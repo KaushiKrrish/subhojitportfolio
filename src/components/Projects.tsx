@@ -1,0 +1,94 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+
+const projects = [
+  {
+    title: "Project One",
+    description: "A modern web application built with React and TypeScript featuring real-time updates and responsive design.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+  },
+  {
+    title: "Project Two",
+    description: "Full-stack e-commerce platform with payment integration, inventory management, and analytics dashboard.",
+    tags: ["Next.js", "Node.js", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+  },
+  {
+    title: "Project Three",
+    description: "Mobile-first social media application with real-time messaging and content sharing capabilities.",
+    tags: ["React Native", "Firebase", "Redux"],
+    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80",
+  },
+];
+
+const Projects = () => {
+  return (
+    <section id="projects" className="py-20 px-6 bg-muted/30">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <div className="w-20 h-1 bg-[var(--gradient-primary)] mx-auto rounded-full mb-4" />
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Here are some of my recent works that showcase my skills and passion for development
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <Card 
+              key={index} 
+              className="glass-card border-0 hover-glow overflow-hidden group animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60" />
+              </div>
+              
+              <CardHeader>
+                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, i) => (
+                    <span 
+                      key={i}
+                      className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline" className="flex-1 border-primary/30 hover:bg-primary/10">
+                    <Github className="w-4 h-4 mr-2" />
+                    Code
+                  </Button>
+                  <Button size="sm" className="flex-1 bg-[var(--gradient-primary)] hover:opacity-90">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
