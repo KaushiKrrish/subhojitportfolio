@@ -16,6 +16,18 @@ const Hero = () => {
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
       
       <div className="relative z-10 text-center max-w-4xl animate-fade-in-up">
+        {/* Profile Image - Replace src with your own image */}
+        <div className="mb-8 flex justify-center">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-[var(--gradient-primary)] rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop"
+              alt="Your Name - Profile"
+              className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-2xl"
+            />
+          </div>
+        </div>
+        
         <div className="mb-6">
           <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary mb-6">
             Welcome to my portfolio
