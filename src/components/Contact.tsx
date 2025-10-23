@@ -18,8 +18,9 @@ const Contact = () => {
   };
 
   const socials = [
-    { icon: Github, label: "GitHub", href: "https://github.com/yourusername" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
+    { icon: Github, label: "GitHub", href: "https://github.com/KaushiKrrish" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/subhojit-mohanty-163626193/" },
+    { icon: Mail, label: "Email", href: "mailto:123id0903@nitrkl.ac.in" },
   ];
 
   return (
