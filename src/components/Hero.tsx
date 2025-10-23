@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -21,8 +22,8 @@ const Hero = () => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-[var(--gradient-primary)] rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity"></div>
             <img 
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop"
-              alt="Your Name - Profile"
+              src={profileImage}
+              alt="Subhojit Mohanty - Profile"
               className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-2xl"
             />
           </div>
@@ -36,7 +37,7 @@ const Hero = () => {
         
         <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
           Hi, I'm{" "}
-          <span className="gradient-text">Your Name</span>
+          <span className="gradient-text">Subhojit Mohanty</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">

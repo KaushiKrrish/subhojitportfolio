@@ -1,6 +1,5 @@
 const skills = {
   "Frontend": ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vue.js"],
-  "Backend": ["Node.js", "Python", "PostgreSQL", "MongoDB", "GraphQL"],
   "Tools": ["Git", "Docker", "AWS", "Figma", "VS Code"],
   "Soft Skills": ["Problem Solving", "Team Collaboration", "Communication", "Agile", "Leadership"],
 };
