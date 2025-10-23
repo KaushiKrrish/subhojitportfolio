@@ -66,11 +66,12 @@ const Hero = () => {
           {/* Right side - Profile Image */}
           <div className="flex justify-center md:justify-end">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-[var(--gradient-primary)] rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute -inset-2 bg-[var(--gradient-primary)] rounded-3xl blur-2xl opacity-60 group-hover:opacity-90 transition-all duration-500 animate-pulse"></div>
+              <div className="absolute -inset-1 bg-[var(--gradient-primary)] rounded-3xl opacity-40"></div>
               <img 
                 src={profileImage}
                 alt="Subhojit Mohanty - Profile"
-                className="relative w-80 h-96 md:w-96 md:h-[500px] rounded-3xl object-cover border-4 border-background shadow-2xl"
+                className="relative w-80 h-96 md:w-96 md:h-[500px] rounded-3xl object-cover border-[3px] border-primary/50 shadow-[0_0_40px_rgba(139,92,246,0.4)] hover:shadow-[0_0_60px_rgba(139,92,246,0.6)] transition-all duration-500"
               />
             </div>
           </div>
