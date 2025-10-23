@@ -15,6 +15,7 @@ const Hero = () => {
       {/* Floating orbs for visual interest */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
       
       <div className="relative z-10 max-w-7xl mx-auto animate-fade-in-up">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -71,7 +72,7 @@ const Hero = () => {
               <img 
                 src={profileImage}
                 alt="Subhojit Mohanty - Profile"
-                className="relative w-80 h-96 md:w-96 md:h-[500px] rounded-3xl object-cover border-[3px] border-primary/50 shadow-[0_0_40px_rgba(139,92,246,0.4)] hover:shadow-[0_0_60px_rgba(139,92,246,0.6)] transition-all duration-500"
+                className="relative w-80 h-96 md:w-96 md:h-[500px] rounded-3xl object-cover border-[3px] border-primary/50 shadow-[0_0_40px_rgba(34,211,238,0.4)] hover:shadow-[0_0_60px_rgba(34,211,238,0.6)] transition-all duration-500"
               />
             </div>
           </div>
