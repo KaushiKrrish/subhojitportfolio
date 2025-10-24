@@ -72,7 +72,7 @@ const Hero = () => {
               <img 
                 src={profileImage}
                 alt="Subhojit Mohanty - Profile"
-                className="relative w-80 h-96 md:w-96 md:h-[500px] rounded-3xl object-cover border-[3px] border-primary/50 shadow-[0_0_40px_rgba(34,211,238,0.4)] hover:shadow-[0_0_60px_rgba(34,211,238,0.6)] transition-all duration-500"
+                className="image-pop relative w-80 h-96 md:w-96 md:h-[500px] rounded-3xl object-cover border-[3px] border-primary/50 shadow-[0_0_40px_rgba(34,211,238,0.4)] hover:shadow-[0_0_60px_rgba(34,211,238,0.6)] transition-all duration-500"
               />
             </div>
           </div>
