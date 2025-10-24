@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Github, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
 
 const Contact = () => {
@@ -20,7 +20,6 @@ const Contact = () => {
   const socials = [
     { icon: Github, label: "GitHub", href: "https://github.com/KaushiKrrish" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/subhojit-mohanty-163626193/" },
-    { icon: Mail, label: "Email", href: "mailto:123id0903@nitrkl.ac.in" },
   ];
 
   return (
