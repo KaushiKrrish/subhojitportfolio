@@ -9,11 +9,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 [&>*]:relative [&>*]:z-10 before:absolute before:inset-0 before:bg-primary-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 [&>*]:relative [&>*]:z-10 before:absolute before:inset-0 before:bg-destructive-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
-        outline: "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground [&>*]:relative [&>*]:z-10 before:absolute before:inset-0 before:bg-accent before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 [&>*]:relative [&>*]:z-10 before:absolute before:inset-0 before:bg-secondary-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
-        ghost: "hover:bg-accent hover:text-accent-foreground [&>*]:relative [&>*]:z-10 before:absolute before:inset-0 before:bg-accent before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
+        default: "bg-primary text-primary-foreground hover:text-primary-foreground before:absolute before:inset-0 before:bg-primary-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
+        destructive: "bg-destructive text-destructive-foreground hover:text-destructive-foreground before:absolute before:inset-0 before:bg-destructive-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
+        outline: "border border-input bg-transparent text-foreground hover:text-foreground before:absolute before:inset-0 before:bg-accent before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
+        secondary: "bg-secondary text-secondary-foreground hover:text-secondary-foreground before:absolute before:inset-0 before:bg-secondary-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
+        ghost: "text-foreground hover:text-foreground before:absolute before:inset-0 before:bg-accent before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
@@ -44,7 +44,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(buttonVariants({ variant, size, className }))} 
         ref={ref} 
         {...props}
-      />
+      >
+        <span className="relative z-10 flex items-center justify-center gap-2">
+          {props.children}
+        </span>
+      </Comp>
     );
   },
 );
