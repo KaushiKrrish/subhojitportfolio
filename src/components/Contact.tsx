@@ -79,8 +79,9 @@ const Contact = () => {
             
             <Button 
               type="submit"
-              size="lg" 
-              className="w-full bg-[var(--gradient-primary)] hover:opacity-90 text-white font-semibold"
+              size="lg"
+              variant="primary"
+              className="w-full font-semibold"
             >
               <Send className="w-5 h-5 mr-2" />
               Send Message

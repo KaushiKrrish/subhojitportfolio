@@ -10,6 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:text-primary-foreground before:absolute before:inset-0 before:bg-primary-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
+        primary: "bg-primary text-white hover:text-white before:absolute before:inset-0 before:bg-white/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
         destructive: "bg-destructive text-destructive-foreground hover:text-destructive-foreground before:absolute before:inset-0 before:bg-destructive-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
         outline: "border border-input bg-transparent text-foreground hover:text-foreground before:absolute before:inset-0 before:bg-accent before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",
         secondary: "bg-secondary text-secondary-foreground hover:text-secondary-foreground before:absolute before:inset-0 before:bg-secondary-foreground/20 before:-translate-x-full hover:before:translate-x-0 before:transition-transform before:duration-500",

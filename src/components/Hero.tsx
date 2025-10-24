@@ -39,7 +39,8 @@ const Hero = () => {
             <div className="flex gap-4 mb-12">
               <Button 
                 size="lg" 
-                className="bg-[var(--gradient-primary)] hover:opacity-90 text-white font-semibold px-8"
+                variant="primary"
+                className="font-semibold px-8"
                 onClick={() => scrollToSection("projects")}
               >
                 View My Work
@@ -47,7 +48,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary/30 hover:bg-primary/10 font-semibold px-8"
+                className="border-primary/30 font-semibold px-8"
                 onClick={() => scrollToSection("contact")}
               >
                 Get in Touch
