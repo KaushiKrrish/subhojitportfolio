@@ -22,12 +22,12 @@ const Hero = () => {
           {/* Left side - Text content */}
           <div className="text-left">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary mb-6">
+              <span className="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-white mb-6">
                 Welcome to my portfolio
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white">
               Hi, I'm{" "}
               <span className="gradient-text">Subhojit Mohanty</span>
             </h1>
@@ -56,7 +56,7 @@ const Hero = () => {
             
             <button 
               onClick={() => scrollToSection("about")}
-              className="animate-bounce inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              className="animate-bounce inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors cursor-pointer"
               aria-label="Scroll to about section"
             >
               <span className="text-sm">Scroll to explore</span>
