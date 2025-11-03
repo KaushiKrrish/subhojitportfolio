@@ -68,11 +68,6 @@ const Hero = () => {
           {/* Right side - Profile Image */}
           <div className="flex justify-center md:justify-end">
             <div className="relative group">
-              {/* Breathing light effects */}
-              <div className="absolute -inset-4 bg-primary/30 rounded-full blur-3xl animate-[pulse_3s_ease-in-out_infinite]"></div>
-              <div className="absolute -inset-3 bg-primary/20 rounded-full blur-2xl animate-[pulse_4s_ease-in-out_infinite]" style={{ animationDelay: "0.5s" }}></div>
-              <div className="absolute -inset-2 bg-primary/15 rounded-full blur-xl animate-[pulse_5s_ease-in-out_infinite]" style={{ animationDelay: "1s" }}></div>
-              
               <div className="absolute -inset-2 bg-[var(--gradient-primary)] rounded-3xl blur-2xl opacity-60 group-hover:opacity-90 transition-all duration-500 animate-pulse"></div>
               <div className="absolute -inset-1 bg-[var(--gradient-primary)] rounded-3xl opacity-40"></div>
               <img 
