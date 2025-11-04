@@ -1,25 +1,32 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import gravidaCareLogo from "@/assets/gravida-care-logo.png";
 
 const projects = [
   {
-    title: "Project One",
-    description: "A modern web application built with React and TypeScript featuring real-time updates and responsive design.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    title: "Gravida Care",
+    description: "To monitor and make an Interactive interface for pregnant women to detect their emotional issues and suggest corresponding solutions (such as educational, nutrition, medications etc) or consultation to the doctor. Woman health prediction through Machine Learning models to predict symptoms, clinical problems, and respective solutions.",
+    tags: ["React", "TypeScript"],
+    image: gravidaCareLogo,
+    liveUrl: "https://www.figma.com/make/V6cHxt9qIEzZt16CKqErYE/Gravida-Care-App?node-id=0-4&t=9htrZiQ99D6L8tNo-1",
+    githubUrl: "#",
   },
   {
     title: "Project Two",
     description: "Full-stack e-commerce platform with payment integration, inventory management, and analytics dashboard.",
     tags: ["Next.js", "Node.js", "PostgreSQL"],
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+    liveUrl: "#",
+    githubUrl: "#",
   },
   {
     title: "Project Three",
     description: "Mobile-first social media application with real-time messaging and content sharing capabilities.",
     tags: ["React Native", "Firebase", "Redux"],
     image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80",
+    liveUrl: "#",
+    githubUrl: "#",
   },
 ];
 
@@ -73,11 +80,20 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline" className="flex-1 border-primary/30 hover:bg-primary/10">
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="flex-1 border-primary/30 hover:bg-primary/10"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
+                  >
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
-                  <Button size="sm" className="flex-1 bg-[var(--gradient-primary)] hover:opacity-90">
+                  <Button 
+                    size="sm" 
+                    className="flex-1 bg-[var(--gradient-primary)] hover:opacity-90"
+                    onClick={() => window.open(project.liveUrl, '_blank')}
+                  >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Live
                   </Button>
