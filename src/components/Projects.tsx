@@ -10,7 +10,7 @@ const projects = [
     tags: ["React", "TypeScript"],
     image: gravidaCareLogo,
     liveUrl: "https://www.figma.com/make/V6cHxt9qIEzZt16CKqErYE/Gravida-Care-App?node-id=0-4&t=9htrZiQ99D6L8tNo-1",
-    githubUrl: "#",
+    githubUrl: "https://github.com/KaushiKrrish/Gravidacareapp",
   },
   {
     title: "Project Two",
