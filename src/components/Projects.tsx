@@ -13,12 +13,12 @@ const projects = [
     githubUrl: "https://github.com/KaushiKrrish/Gravidacareapp",
   },
   {
-    title: "Project Two",
-    description: "Full-stack e-commerce platform with payment integration, inventory management, and analytics dashboard.",
-    tags: ["Next.js", "Node.js", "PostgreSQL"],
+    title: "Vriksha Blossom Display",
+    description: "An interactive visual experience that simulates falling blossoms and natural trees. The project focuses on generative art, smooth animations, and user interaction—allowing users to create blossom clusters, adjust bloom size, and explore dynamic visual patterns. Designed as a lightweight, browser-based application, it showcases creativity, aesthetic detailing, and an understanding of interactive graphics programming.",
+    tags: ["p5.js", "HTML5", "JavaScript"],
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/KaushiKrrish/vriksha-blossom-display.git",
   },
   {
     title: "Project Three",
