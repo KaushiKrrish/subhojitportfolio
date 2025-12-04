@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen snap-y snap-mandatory h-screen overflow-y-auto">
+    <div className="min-h-screen snap-y snap-mandatory h-screen overflow-y-auto scroll-smooth">
       <div className="snap-start">
         <Hero />
       </div>
