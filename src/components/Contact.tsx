@@ -23,7 +23,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6 bg-muted/30">
+    <section id="contact" className="min-h-screen flex items-center py-20 px-6 bg-muted/30">
       <div className="max-w-4xl mx-auto text-center">
         <div className="animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

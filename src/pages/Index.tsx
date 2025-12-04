@@ -6,12 +6,20 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <About />
+    <div className="min-h-screen snap-y snap-mandatory h-screen overflow-y-auto">
+      <div className="snap-start">
+        <Hero />
+      </div>
+      <div className="snap-start">
+        <About />
+      </div>
       <Projects />
-      <CreativeWorks />
-      <Contact />
+      <div className="snap-start">
+        <CreativeWorks />
+      </div>
+      <div className="snap-start">
+        <Contact />
+      </div>
     </div>
   );
 };
