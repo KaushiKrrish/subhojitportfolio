@@ -128,6 +128,7 @@ All colors MUST be HSL.
 /* Scroll snap styles */
 .snap-y {
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .snap-mandatory {
@@ -136,6 +137,7 @@ All colors MUST be HSL.
 
 .snap-start {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 @layer utilities {
