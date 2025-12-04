@@ -1,7 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import gravidaCareLogo from "@/assets/gravida-care-logo.png";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -56,6 +57,13 @@ const Projects = () => {
             align: "start",
             loop: true,
           }}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+              stopOnInteraction: false,
+              stopOnMouseEnter: true,
+            }),
+          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-4">
