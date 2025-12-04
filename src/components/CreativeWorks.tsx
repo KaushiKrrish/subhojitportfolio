@@ -42,7 +42,7 @@ const categories = [
 
 const CreativeWorks = () => {
   return (
-    <section id="creative-works" className="py-20 px-6 bg-background">
+    <section id="creative-works" className="min-h-screen flex items-center py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
