@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import gravidaCareCover from "@/assets/gravida-care-cover.png";
 import vrikshaCover from "@/assets/vriksha-cover.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const projects = [
   {
@@ -22,110 +29,104 @@ const projects = [
   },
 ];
 
-const ProjectsHeader = () => (
-  <section className="min-h-screen w-full flex items-center justify-center bg-muted/30 px-6 snap-start">
-    <div className="text-center animate-fade-in-up">
-      <h2 className="text-4xl md:text-6xl font-bold mb-4">
-        Featured <span className="gradient-text">Projects</span>
-      </h2>
-      <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
-      <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-        Here are some of my recent works that showcase my skills and passion for development
+const ProjectCard = ({ project, index, total }: { project: typeof projects[0]; index: number; total: number }) => (
+  <div className="w-full grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+    {/* Image Side */}
+    <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+      <div className="relative group cursor-pointer">
+        <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
+        <img 
+          src={project.image} 
+          alt={project.title}
+          className={`relative w-full h-[300px] md:h-[400px] rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] ${
+            project.title === "Gravida Care" ? "object-contain bg-card" : "object-cover"
+          }`}
+        />
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
+      </div>
+    </div>
+
+    {/* Text Side */}
+    <div className={`space-y-4 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+      <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+        Project {index + 1} of {total}
+      </div>
+      
+      <h3 className="text-2xl md:text-4xl font-bold">{project.title}</h3>
+      
+      <p className="text-muted-foreground text-sm md:text-base leading-relaxed line-clamp-4">
+        {project.description}
       </p>
-      <div className="mt-8 animate-bounce">
-        <span className="text-muted-foreground text-sm">Scroll to explore</span>
-      </div>
-    </div>
-  </section>
-);
 
-const ProjectSlide = ({ project, index, total }: { project: typeof projects[0]; index: number; total: number }) => (
-  <section className="min-h-screen w-full flex items-center justify-center relative overflow-hidden snap-start">
-    {/* Background Image */}
-    <div 
-      className="absolute inset-0 w-full h-full bg-cover bg-center"
-      style={{ backgroundImage: `url(${project.image})` }}
-    >
-      <div className="absolute inset-0 bg-background/90 backdrop-blur-md" />
-    </div>
-
-    {/* Content */}
-    <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
-      {/* Image Side */}
-      <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-        <div className="relative group cursor-pointer">
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
-          <img 
-            src={project.image} 
-            alt={project.title}
-            className={`relative w-full h-[40vh] md:h-[60vh] rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] ${
-              project.title === "Gravida Care" ? "object-contain bg-card" : "object-cover"
-            }`}
-          />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
-        </div>
-      </div>
-
-      {/* Text Side */}
-      <div className={`space-y-6 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
-        <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-          Project {index + 1} of {total}
-        </div>
-        
-        <h3 className="text-3xl md:text-5xl font-bold">{project.title}</h3>
-        
-        <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-          {project.description}
-        </p>
-
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, i) => (
-            <span 
-              key={i}
-              className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:bg-primary/20 hover:scale-105"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div className="flex flex-wrap gap-4 pt-4">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            onClick={() => window.open(project.githubUrl, '_blank')}
+      <div className="flex flex-wrap gap-2">
+        {project.tags.map((tag, i) => (
+          <span 
+            key={i}
+            className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:bg-primary/20 hover:scale-105"
           >
-            <Github className="w-5 h-5 mr-2" />
-            View Code
-          </Button>
-          <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.5)]"
-            onClick={() => window.open(project.liveUrl, '_blank')}
-          >
-            <ExternalLink className="w-5 h-5 mr-2" />
-            Live Demo
-          </Button>
-        </div>
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-4 pt-2">
+        <Button 
+          size="default" 
+          variant="outline" 
+          className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          onClick={() => window.open(project.githubUrl, '_blank')}
+        >
+          <Github className="w-4 h-4 mr-2" />
+          View Code
+        </Button>
+        <Button 
+          size="default" 
+          className="bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.5)]"
+          onClick={() => window.open(project.liveUrl, '_blank')}
+        >
+          <ExternalLink className="w-4 h-4 mr-2" />
+          Live Demo
+        </Button>
       </div>
     </div>
-  </section>
+  </div>
 );
 
 const Projects = () => {
   return (
-    <div id="projects" className="snap-y snap-mandatory h-screen overflow-y-auto">
-      <ProjectsHeader />
-      {projects.map((project, index) => (
-        <ProjectSlide 
-          key={index} 
-          project={project} 
-          index={index} 
-          total={projects.length}
-        />
-      ))}
-    </div>
+    <section id="projects" className="py-16 md:py-24 px-6 bg-muted/30">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12 animate-fade-in-up">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Here are some of my recent works that showcase my skills and passion for development
+          </p>
+        </div>
+
+        {/* Carousel */}
+        <Carousel className="w-full" opts={{ loop: true }}>
+          <CarouselContent>
+            {projects.map((project, index) => (
+              <CarouselItem key={index}>
+                <ProjectCard 
+                  project={project} 
+                  index={index} 
+                  total={projects.length}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center gap-4 mt-8">
+            <CarouselPrevious className="static translate-y-0 bg-primary/10 border-primary/20 hover:bg-primary/20" />
+            <CarouselNext className="static translate-y-0 bg-primary/10 border-primary/20 hover:bg-primary/20" />
+          </div>
+        </Carousel>
+      </div>
+    </section>
   );
 };
 
