@@ -23,7 +23,7 @@ const projects = [
 ];
 
 const ProjectsHeader = () => (
-  <section id="projects" className="min-h-screen w-full flex items-center justify-center bg-muted/30 px-6 snap-start">
+  <section className="min-h-screen w-full flex items-center justify-center bg-muted/30 px-6 snap-start">
     <div className="text-center animate-fade-in-up">
       <h2 className="text-4xl md:text-6xl font-bold mb-4">
         Featured <span className="gradient-text">Projects</span>
@@ -46,20 +46,23 @@ const ProjectSlide = ({ project, index, total }: { project: typeof projects[0]; 
       className="absolute inset-0 w-full h-full bg-cover bg-center"
       style={{ backgroundImage: `url(${project.image})` }}
     >
-      <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-background/90 backdrop-blur-md" />
     </div>
 
     {/* Content */}
     <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
       {/* Image Side */}
       <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-        <div className="relative group">
+        <div className="relative group cursor-pointer">
+          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700" />
           <img 
             src={project.image} 
             alt={project.title}
-            className="w-full h-[40vh] md:h-[60vh] object-cover rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            className={`relative w-full h-[40vh] md:h-[60vh] rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] ${
+              project.title === "Gravida Care" ? "object-contain bg-card" : "object-cover"
+            }`}
           />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
         </div>
       </div>
 
@@ -79,7 +82,7 @@ const ProjectSlide = ({ project, index, total }: { project: typeof projects[0]; 
           {project.tags.map((tag, i) => (
             <span 
               key={i}
-              className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20"
+              className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:bg-primary/20 hover:scale-105"
             >
               {tag}
             </span>
@@ -90,7 +93,7 @@ const ProjectSlide = ({ project, index, total }: { project: typeof projects[0]; 
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-primary/30 hover:bg-primary/10"
+            className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             onClick={() => window.open(project.githubUrl, '_blank')}
           >
             <Github className="w-5 h-5 mr-2" />
@@ -98,7 +101,7 @@ const ProjectSlide = ({ project, index, total }: { project: typeof projects[0]; 
           </Button>
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90"
+            className="bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.5)]"
             onClick={() => window.open(project.liveUrl, '_blank')}
           >
             <ExternalLink className="w-5 h-5 mr-2" />
@@ -112,7 +115,7 @@ const ProjectSlide = ({ project, index, total }: { project: typeof projects[0]; 
 
 const Projects = () => {
   return (
-    <>
+    <div id="projects" className="snap-y snap-mandatory h-screen overflow-y-auto">
       <ProjectsHeader />
       {projects.map((project, index) => (
         <ProjectSlide 
@@ -122,7 +125,7 @@ const Projects = () => {
           total={projects.length}
         />
       ))}
-    </>
+    </div>
   );
 };
 
