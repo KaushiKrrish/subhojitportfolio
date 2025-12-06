@@ -1,31 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import gravidaCareLogo from "@/assets/gravida-care-logo.png";
+import gravidaCareCover from "@/assets/gravida-care-cover.png";
+import vrikshaCover from "@/assets/vriksha-cover.png";
 
 const projects = [
   {
     title: "Gravida Care",
     description: "To monitor and make an Interactive interface for pregnant women to detect their emotional issues and suggest corresponding solutions (such as educational, nutrition, medications etc) or consultation to the doctor. Woman health prediction through Machine Learning models to predict symptoms, clinical problems, and respective solutions.",
     tags: ["React", "TypeScript"],
-    image: gravidaCareLogo,
-    liveUrl: "https://www.figma.com/make/V6cHxt9qIEzZt16CKqErYE/Gravida-Care-App?node-id=0-4&t=9htrZiQ99D6L8tNo-1",
-    githubUrl: "https://github.com/KaushiKrrish/Gravidacareapp",
+    image: gravidaCareCover,
+    liveUrl: "https://gravidacare.vercel.app/",
+    githubUrl: "https://github.com/KaushiKrrish/Gravidacareapp.git",
   },
   {
     title: "Vriksha Blossom Display",
     description: "An interactive visual experience that simulates falling blossoms and natural trees. The project focuses on generative art, smooth animations, and user interaction—allowing users to create blossom clusters, adjust bloom size, and explore dynamic visual patterns. Designed as a lightweight, browser-based application, it showcases creativity, aesthetic detailing, and an understanding of interactive graphics programming.",
     tags: ["p5.js", "HTML5", "JavaScript"],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
-    liveUrl: "#",
+    image: vrikshaCover,
+    liveUrl: "https://vrikshablossom.vercel.app/",
     githubUrl: "https://github.com/KaushiKrrish/vriksha-blossom-display.git",
-  },
-  {
-    title: "Project Three",
-    description: "Mobile-first social media application with real-time messaging and content sharing capabilities.",
-    tags: ["React Native", "Firebase", "Redux"],
-    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80",
-    liveUrl: "#",
-    githubUrl: "#",
   },
 ];
 
