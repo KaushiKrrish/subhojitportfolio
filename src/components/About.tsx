@@ -13,13 +13,10 @@ const About = () => {
           <div className="glass-card p-8 rounded-3xl hover-glow animate-scale-in">
             <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              I'm a passionate developer with a love for creating beautiful, functional websites 
-              and applications. With expertise in modern web technologies, I bring ideas to life 
-              through clean code and thoughtful design.
+              I'm an enthusiastic developer who enjoys building stunning, useful websites and applications. With my knowledge of contemporary web technologies, I use well-thought design and clean code to make concepts come to life.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, contributing to 
-              open-source projects, or sharing knowledge with the developer community.
+              I like to explore new technologies, contribute to creative projects, and share my knowledge with the developer community.
             </p>
           </div>
           
@@ -28,19 +25,19 @@ const About = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                <span className="text-muted-foreground">Build responsive, modern web applications</span>
+                <span className="text-muted-foreground">Create cutting-edge, responsive designs</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-accent rounded-full mt-2" />
-                <span className="text-muted-foreground">Create intuitive user interfaces and experiences</span>
+                <span className="text-muted-foreground">Make user interfaces and experiences that are easy to use</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                <span className="text-muted-foreground">Implement scalable backend solutions</span>
+                <span className="text-muted-foreground">Put scalable design solutions into practice</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-accent rounded-full mt-2" />
-                <span className="text-muted-foreground">Optimize performance and accessibility</span>
+                <span className="text-muted-foreground">Boost accessibility and performance</span>
               </li>
             </ul>
           </div>
