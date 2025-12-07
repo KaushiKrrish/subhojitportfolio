@@ -108,19 +108,6 @@ const Contact = () => {
         </div>
         
         <footer className="mt-20 pt-8 border-t border-border">
-          <div className="flex justify-center gap-4 mb-4">
-            {socials.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-secondary/50 hover:bg-primary/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <social.icon className="w-5 h-5 text-muted-foreground hover:text-primary" />
-              </a>
-            ))}
-          </div>
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} Subhojit Mohanty.
           </p>

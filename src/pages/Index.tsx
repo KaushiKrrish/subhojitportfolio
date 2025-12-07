@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import CreativeWorks from "@/components/CreativeWorks";
 import Contact from "@/components/Contact";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <CreativeWorks />
         <Contact />
       </div>
+      <ScrollToTop />
     </div>
   );
 };
