@@ -109,7 +109,7 @@ const Contact = () => {
         
         <footer className="mt-20 pt-8 border-t border-border">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Subhojit Mohanty. Built with React & Tailwind CSS.
+            © {new Date().getFullYear()} Subhojit Mohanty.
           </p>
         </footer>
       </div>

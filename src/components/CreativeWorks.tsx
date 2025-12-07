@@ -80,13 +80,6 @@ const CreativeWorks = () => {
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
                 </div>
-                {item.comingSoon && (
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full backdrop-blur-sm">
-                      Coming Soon
-                    </span>
-                  </div>
-                )}
               </div>
               
               <CardContent className="pt-4 pb-5">
