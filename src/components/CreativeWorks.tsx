@@ -43,10 +43,8 @@ const creativeItems = [
 const CreativeWorks = () => {
   const [showComingSoon, setShowComingSoon] = useState(false);
 
-  const handleItemClick = (comingSoon: boolean) => {
-    if (comingSoon) {
-      setShowComingSoon(true);
-    }
+  const handleItemClick = () => {
+    setShowComingSoon(true);
   };
 
   return (
@@ -66,7 +64,7 @@ const CreativeWorks = () => {
           {creativeItems.map((item, index) => (
             <Card 
               key={index}
-              onClick={() => handleItemClick(item.comingSoon)}
+              onClick={() => handleItemClick()}
               className="glass-card border-0 hover-glow group animate-scale-in cursor-pointer overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -92,8 +90,8 @@ const CreativeWorks = () => {
               </div>
               
               <CardContent className="pt-4 pb-5">
-                <p className="text-xs text-muted-foreground mb-1">{item.category}</p>
-                <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-1">{item.category}</h3>
+                <p className="text-xs text-muted-foreground">{item.title}</p>
               </CardContent>
             </Card>
           ))}

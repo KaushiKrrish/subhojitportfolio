@@ -13,11 +13,13 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo/Name */}
         <div className="flex items-center gap-3">
-          <img 
-            src={smLogo} 
-            alt="SM Logo" 
-            className="w-10 h-10 rounded-lg object-cover"
-          />
+          <div className="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
+            <img 
+              src={smLogo} 
+              alt="SM Logo" 
+              className="w-full h-full object-contain"
+            />
+          </div>
           <span className="text-xl font-semibold text-foreground">Subhojit Mohanty</span>
         </div>
 
