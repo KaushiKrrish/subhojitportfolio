@@ -65,7 +65,7 @@ const CreativeWorks = () => {
             <Card 
               key={index}
               onClick={() => handleItemClick()}
-              className="glass-card border-0 hover-glow group animate-scale-in cursor-pointer overflow-hidden"
+              className="glass-card border-0 hover-glow group animate-scale-in cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
