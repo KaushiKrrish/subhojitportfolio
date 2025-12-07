@@ -1,3 +1,5 @@
+import smLogo from "@/assets/sm-logo.png";
+
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -11,9 +13,11 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo/Name */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg">
-            SM
-          </div>
+          <img 
+            src={smLogo} 
+            alt="SM Logo" 
+            className="w-10 h-10 rounded-lg object-cover"
+          />
           <span className="text-xl font-semibold text-foreground">Subhojit Mohanty</span>
         </div>
 
