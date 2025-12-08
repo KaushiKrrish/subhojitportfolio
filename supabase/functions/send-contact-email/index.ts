@@ -27,7 +27,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Sending contact notification email for:", name, email);
 
     // Send notification email to the portfolio owner
-    const emailResponse = await resend.emails.send({
+    const ownerEmailResponse = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: ["123id0903@nitrkl.ac.in"],
       subject: `New Contact Message from ${name}`,
@@ -52,9 +52,43 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    console.log("Owner notification email sent:", ownerEmailResponse);
 
-    return new Response(JSON.stringify({ success: true, data: emailResponse }), {
+    // Send confirmation email to the sender
+    const confirmationEmailResponse = await resend.emails.send({
+      from: "Subhojit Mohanty <onboarding@resend.dev>",
+      to: [email],
+      subject: "Thank you for reaching out!",
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px;">
+          <div style="background: white; padding: 30px; border-radius: 12px;">
+            <h1 style="color: #6366f1; margin-bottom: 20px;">Hi ${name}! 👋</h1>
+            
+            <p style="color: #334155; font-size: 16px; line-height: 1.6;">
+              Thank you for reaching out! I've received your message and will get back to you as soon as possible.
+            </p>
+            
+            <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #6366f1;">
+              <h3 style="margin-top: 0; color: #475569; font-size: 14px;">Your message:</h3>
+              <p style="white-space: pre-wrap; color: #64748b; font-style: italic;">${message}</p>
+            </div>
+            
+            <p style="color: #334155; font-size: 16px; line-height: 1.6;">
+              In the meantime, feel free to check out my work or connect with me on social media.
+            </p>
+            
+            <p style="color: #6366f1; font-weight: 600; margin-top: 30px;">
+              Best regards,<br>
+              Subhojit Mohanty
+            </p>
+          </div>
+        </div>
+      `,
+    });
+
+    console.log("Confirmation email sent:", confirmationEmailResponse);
+
+    return new Response(JSON.stringify({ success: true, data: { owner: ownerEmailResponse, confirmation: confirmationEmailResponse } }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",

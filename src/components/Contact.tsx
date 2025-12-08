@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Send, Loader2 } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Github, Linkedin, Send, Loader2, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -9,6 +10,8 @@ import { useToast } from "@/hooks/use-toast";
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [submittedData, setSubmittedData] = useState<{ name: string; email: string; message: string } | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,10 +54,15 @@ const Contact = () => {
         },
       });
 
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+      // Store submitted data for dialog
+      setSubmittedData({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
       });
+
+      // Show success dialog
+      setShowSuccessDialog(true);
 
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -170,6 +178,47 @@ const Contact = () => {
           </p>
         </footer>
       </div>
+
+      {/* Success Dialog with Backdrop Blur */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md border-none bg-background/80 backdrop-blur-xl shadow-2xl">
+          <div className="flex flex-col items-center text-center py-6 px-4">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6 animate-scale-in">
+              <CheckCircle className="w-8 h-8 text-primary-foreground" />
+            </div>
+            
+            <h3 className="text-2xl font-bold gradient-text mb-2">Message Sent!</h3>
+            <p className="text-muted-foreground mb-6">
+              Thank you for reaching out. A confirmation email has been sent to your inbox.
+            </p>
+            
+            {submittedData && (
+              <div className="w-full bg-muted/50 rounded-xl p-4 text-left space-y-3">
+                <div>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Name</span>
+                  <p className="font-medium">{submittedData.name}</p>
+                </div>
+                <div>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Email</span>
+                  <p className="font-medium">{submittedData.email}</p>
+                </div>
+                <div>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Message</span>
+                  <p className="text-sm text-muted-foreground whitespace-pre-wrap">{submittedData.message}</p>
+                </div>
+              </div>
+            )}
+            
+            <Button 
+              onClick={() => setShowSuccessDialog(false)} 
+              variant="primary" 
+              className="mt-6 w-full"
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
