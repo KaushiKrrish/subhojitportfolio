@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import gravidaCareCover from "@/assets/gravida-care-cover.png";
 import vrikshaCover from "@/assets/vriksha-cover.png";
+import rideForwardCover from "@/assets/ride-forward-cover.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +12,14 @@ import {
 } from "@/components/ui/carousel";
 
 const projects = [
+  {
+    title: "Ride Forward",
+    description: "Designed an inclusive eco-friendly transport-sharing platform using user research, personas, journey mapping, and accessible UI to simplify sustainable mobility.",
+    tags: ["Figma"],
+    image: rideForwardCover,
+    liveUrl: "https://www.figma.com/proto/8NGRpLGGAhqvvFf1CUxvp6/IxD-Work?node-id=0-1&t=CbO7pCbmwE2plHR7-1",
+    githubUrl: "",
+  },
   {
     title: "Gravida Care",
     description: "To monitor and make an Interactive interface for pregnant women to detect their emotional issues and suggest corresponding solutions (such as educational, nutrition, medications etc) or consultation to the doctor. Woman health prediction through Machine Learning models to predict symptoms, clinical problems, and respective solutions.",
@@ -70,15 +79,17 @@ const ProjectCard = ({ project, index, total }: { project: typeof projects[0]; i
       </div>
 
       <div className="flex flex-wrap gap-4 pt-2">
-        <Button 
-          size="default" 
-          variant="outline" 
-          className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-          onClick={() => window.open(project.githubUrl, '_blank')}
-        >
-          <Github className="w-4 h-4 mr-2" />
-          View Code
-        </Button>
+        {project.githubUrl && (
+          <Button
+            size="default"
+            variant="outline"
+            className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => window.open(project.githubUrl, '_blank')}
+          >
+            <Github className="w-4 h-4 mr-2" />
+            View Code
+          </Button>
+        )}
         <Button 
           size="default" 
           className="bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.5)]"
