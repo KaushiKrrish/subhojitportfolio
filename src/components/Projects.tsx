@@ -79,15 +79,17 @@ const ProjectCard = ({ project, index, total }: { project: typeof projects[0]; i
       </div>
 
       <div className="flex flex-wrap gap-4 pt-2">
-        <Button 
-          size="default" 
-          variant="outline" 
-          className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-          onClick={() => window.open(project.githubUrl, '_blank')}
-        >
-          <Github className="w-4 h-4 mr-2" />
-          View Code
-        </Button>
+        {project.githubUrl && (
+          <Button
+            size="default"
+            variant="outline"
+            className="border-primary/30 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => window.open(project.githubUrl, '_blank')}
+          >
+            <Github className="w-4 h-4 mr-2" />
+            View Code
+          </Button>
+        )}
         <Button 
           size="default" 
           className="bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_-10px_hsl(var(--primary)/0.5)]"
