@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, Palette, PenTool, BookOpen } from "lucide-react";
+import { Palette, PenTool } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -10,13 +10,6 @@ import {
 } from "@/components/ui/dialog";
 
 const creativeItems = [
-  {
-    title: "UX Research Study",
-    category: "Case Studies",
-    icon: FileText,
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&q=80",
-    comingSoon: true,
-  },
   {
     title: "Concept Sketches",
     category: "Visual Sketches",
@@ -30,13 +23,6 @@ const creativeItems = [
     icon: Palette,
     image: "https://images.unsplash.com/photo-1549490349-8643362247b5?w=400&q=80",
     comingSoon: false,
-  },
-  {
-    title: "Design Insights",
-    category: "Articles",
-    icon: BookOpen,
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&q=80",
-    comingSoon: true,
   },
 ];
 
@@ -56,11 +42,11 @@ const CreativeWorks = () => {
           </h2>
           <div className="w-20 h-1 bg-[var(--gradient-primary)] mx-auto rounded-full mb-4" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore my creative journey through case studies, sketches, digital art, and written articles
+            Explore my creative journey through sketches and digital art
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {creativeItems.map((item, index) => (
             <Card 
               key={index}
