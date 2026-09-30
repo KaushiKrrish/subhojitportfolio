@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import gravidaCareCover from "@/assets/gravida-care-cover.png";
 import vrikshaCover from "@/assets/vriksha-cover.png";
+import rideForwardCover from "@/assets/ride-forward-cover.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +12,14 @@ import {
 } from "@/components/ui/carousel";
 
 const projects = [
+  {
+    title: "Ride Forward",
+    description: "Designed an inclusive eco-friendly transport-sharing platform using user research, personas, journey mapping, and accessible UI to simplify sustainable mobility.",
+    tags: ["Figma"],
+    image: rideForwardCover,
+    liveUrl: "https://www.figma.com/proto/8NGRpLGGAhqvvFf1CUxvp6/IxD-Work?node-id=0-1&t=CbO7pCbmwE2plHR7-1",
+    githubUrl: "",
+  },
   {
     title: "Gravida Care",
     description: "To monitor and make an Interactive interface for pregnant women to detect their emotional issues and suggest corresponding solutions (such as educational, nutrition, medications etc) or consultation to the doctor. Woman health prediction through Machine Learning models to predict symptoms, clinical problems, and respective solutions.",
